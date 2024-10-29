@@ -1,0 +1,40 @@
+// Main TravelPlanner class
+public class TravelPlanner {
+    
+    // Inner class for Expense Tracking
+    public static class ExpenseTracker {
+        private double totalExpenses;
+
+        // Constructor
+        public ExpenseTracker() {
+            this.totalExpenses = 0.0;
+        }
+
+        // Method to add an expense
+        public void addExpense(double amount) {
+            if (amount > 0) {
+                totalExpenses += amount;
+                System.out.println("Added expense: $" + amount);
+            } else {
+                System.out.println("Expense must be positive.");
+            }
+        }
+
+        // Method to get the total expenses
+        public double getTotalExpenses() {
+            return totalExpenses;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Creating an instance of ExpenseTracker
+        ExpenseTracker tracker = new ExpenseTracker();
+
+        // Adding expenses
+        tracker.addExpense(150.0);
+        tracker.addExpense(85.5);
+
+        // Displaying total expenses
+        System.out.println("Total expenses: $" + tracker.getTotalExpenses());
+    }
+}
